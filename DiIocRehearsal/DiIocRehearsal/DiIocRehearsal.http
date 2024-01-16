@@ -1,0 +1,6 @@
+@DiIocRehearsal_HostAddress = http://localhost:5192
+
+GET {{DiIocRehearsal_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
