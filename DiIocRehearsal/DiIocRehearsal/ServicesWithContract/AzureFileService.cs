@@ -12,8 +12,11 @@ namespace DiIocRehearsal.ServicesWithContract
         private readonly BlobContainerClient containerClient;
         public AzureFileService()
         {
-            this.blobServiceClient = new BlobServiceClient(storageConnString);
-            this.containerClient = blobServiceClient.GetBlobContainerClient(containerName);
+            if(!string.IsNullOrWhiteSpace(storageConnString))
+            {
+                this.blobServiceClient = new BlobServiceClient(storageConnString);
+                this.containerClient = blobServiceClient.GetBlobContainerClient(containerName);
+            }
         }
 
         public async Task<string> WriteAsync(string name, string base64)
