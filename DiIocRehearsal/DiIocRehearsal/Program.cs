@@ -12,6 +12,7 @@ builder.Services.AddSwaggerGen();
 
 ////builder.Services.AddScoped<IFileRepository, DiskFileService>();
 //builder.Services.AddScoped<IFileRepository, AzureFileService>();
+
 builder.Services.AddScoped<IFileRepository, DiskFileService>();
 builder.Services.AddScoped<IFileRepository, AzureFileService>();
 
